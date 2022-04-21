@@ -6,7 +6,7 @@ Create an open source app that should copy its assets folder files to phone's st
 
 # Details and the flow:
 
-1. A simple (naive) test should be done if the files were already copied and provide an option to recopy or skip it. (e.g. for test: check if external storage <sdcard>/Books already has the intro.epub file in the expected path)
+1. A simple (naive) test should be done if the files were already copied and provide an option to recopy or skip it. (e.g. for test: have a file in our app's private storage (or in a config in sqlplus) if the copy was done previously for this release).
 
 
 2. (depending on 1), the app should copy the files (forcefully, non-interactive) from its assets directory to the external storage under Books folder, maintaining the directory structure. Copy progress should be shown (a simple counter would also do: file <x> out of <...>). If there was an error, print a message the user with a "mailto:" to a...@gmail.com.
@@ -20,6 +20,8 @@ If no such handler exists, it should try to open the FBReader App (on Android): 
 On IOS the behaviour should be similar to the extend is possible (worst case scenario it should open the Market place for an epub reader able to read from external storage).
   
 # Guidelines & Notes:
+  
+0. Every time the app decides it has to copy or access the files to external storage it'll check if it has the perms and if they are missing we'll have to prompt the user for it.
 
 1. The app should base as much as possible on existing plugins.
 Plugins which you may want to use for copying to external storage:
