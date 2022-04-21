@@ -2,11 +2,11 @@
 basic flutter app: file copy&app_launcher
 
 # TL;DR
-Create an open source app that should copy its files to phone's storage and do an url launch or app launch. Keep it simple and reuse existing packages. Priority Android.
+Create an open source app that should copy its assets folder files to phone's storage and do an url launch or app launch. Keep it simple and reuse existing packages. Priority Android.
 
 # Details and the flow:
 
-1. A simple (naive) test should be done if the files were already copied and provide an option to recopy or skip it. (e.g. for test: check if external storage already has the intro.epub file in the expected path)
+1. A simple (naive) test should be done if the files were already copied and provide an option to recopy or skip it. (e.g. for test: check if external storage <sdcard>/Books already has the intro.epub file in the expected path)
 
 
 2. (depending on 1), the app should copy the files (forcefully, non-interactive) from its assets directory to the external storage under Books folder, maintaining the directory structure. Copy progress should be shown (a simple counter would also do: file <x> out of <...>). If there was an error, print a message the user with a "mailto:" to a...@gmail.com.
